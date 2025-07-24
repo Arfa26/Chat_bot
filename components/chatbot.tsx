@@ -272,7 +272,7 @@ export default function Chatbot() {
         {step === 10 && (
           <Typography>
             Thank you for your time. Your responses have been securely stored and
-            will be reviewed by your doctor.
+            will be reviewed by your doctor.(On Console)
           </Typography>
         )}
       </Paper>
