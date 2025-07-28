@@ -156,7 +156,7 @@ export default function Chatbot() {
 
         {step === -1 && (
           <Typography>
-            I understand. Please let me know when you're ready to begin.
+            I understand. Please let me know when you are ready to begin.
           </Typography>
         )}
 
