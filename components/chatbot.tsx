@@ -80,14 +80,31 @@ export default function Chatbot() {
     setRandomQuestions(shuffled.slice(0, 5));
   }, []);
 
-  const handleSubmit = () => {
+  // const handleSubmit = () => {
+  //   const formattedResponses = {
+  //     ...responses,
+  //     dob: responses.dob ? responses.dob.format("DD/MM/YYYY") : null
+  //   };
+  //   console.log("Submitted Data:", formattedResponses);
+  //   setStep(step + 1);
+  // };
+  const handleSubmit = async () => {
     const formattedResponses = {
-      ...responses,
-      dob: responses.dob ? responses.dob.format("DD/MM/YYYY") : null
+      username: responses.name,
+      dob: responses.dob ? responses.dob.format("DD/MM/YYYY") : null,
+      gender: responses.gender,
+      userResponses: responses.questions,
     };
-    console.log("Submitted Data:", formattedResponses);
-    setStep(step + 1);
+  
+    console.log("Submitting Data to API:", formattedResponses);
+  
+    // Simulate API call with 1.5s delay
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+  
+    // Then move to thank-you step
+    setStep(10);
   };
+  
 
   return (
     <Box mt={20} p={4} maxWidth={600} mx="auto">
@@ -272,7 +289,7 @@ export default function Chatbot() {
         {step === 10 && (
           <Typography>
             Thank you for your time. Your responses have been securely stored and
-            will be reviewed by your doctor.(On Console)
+            will be reviewed by your doctor.
           </Typography>
         )}
       </Paper>
