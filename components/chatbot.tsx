@@ -229,7 +229,7 @@ key={step !== 10 ? step : 'final'}
           )}
 
           {/* Step -1: Declined */}
-          {step === -1 && <Typography>No problem. Let us know when you're ready to start.</Typography>}
+          {step === -1 && <Typography>No problem. Let us know when you are ready to start.</Typography>}
 
           {/* Step 1-3: Formik Flow */}
           {step >= 1 && step <= 3 && (
